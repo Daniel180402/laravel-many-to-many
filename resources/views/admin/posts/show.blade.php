@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="my-height overflow-scroll">
     <div class="container">
-            <div class="row justify-content-center">
+        <div class="row justify-content-center">
                 @if (session('message'))
             <div class="alert alert-success col-12">
                 {{ session('message') }}
@@ -16,7 +15,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$post->title}}</h5>
                     <p class="card-text">{{$post->content}}</p>
-                    <pre class="card-text"> {{$post->user_id}}</pre>
+                    <pre class="card-text"> {{ ucwords($post->user->name) }}</pre>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">{{$post->updated_at}}</small>
@@ -48,6 +47,13 @@
                         </a>
                     </div>
                 </div>
+            </div>
+            <div class="col-6">
+                @foreach ($post->user->posts as $realtedPost)
+                <a href="{{route('admin.posts.show', $realtedPost)}}">
+                    <pre>{{$realtedPost->title}}</pre>
+                </a>
+                @endforeach
             </div>
         </div>
     </div>

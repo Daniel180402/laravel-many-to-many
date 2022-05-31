@@ -16,8 +16,9 @@ class PostsTableSeeder extends Seeder
     {
         for ($i=0; $i < 120 ; $i++) {
             $newPost = new Post();
-            $newPost->title = ucfirst($faker->realTextBetween(6, 16));;
-            $newPost->user_id = $faker->numberBetween(0, User::count());
+            $newPost->title = ucfirst($faker->realTextBetween(6, 16));
+            $newPost->author = $faker->name() ;
+            /* $newPost->user_id = $faker->numberBetween(0, User::count()); */
             $newPost->content = $faker->realText(400);
             $newPost->image_url = "https://picsum.photos/id/$i/450/550";
             $newPost->slug = Str::slug($newPost->title, '-')."$i";
