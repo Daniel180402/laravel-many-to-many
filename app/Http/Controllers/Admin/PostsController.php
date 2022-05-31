@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Model\Post;
+use App\User;
 
 class PostsController extends Controller
 {
@@ -75,7 +76,9 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        return view('admin.posts.show', compact('post'));
+        /* $user = User::findOrFail($post->user_id); */
+        /* return view('admin.posts.show', ["post" => $post, "user" => $user]); */
+        return view('admin.posts.show', ["post" => $post]);
     }
 
     /**

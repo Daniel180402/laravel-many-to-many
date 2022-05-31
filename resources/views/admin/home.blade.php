@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container my-height">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -18,6 +18,15 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        {{-- <div class="col-6">
+            @php
+
+                if (Hash::check('classe55'., Auth::user()->password)) {
+                    echo "Verificata";
+                } else {
+                    echo "non Verificata";
+                }
+                @endphp
+        </div> --}}
 @endsection
+

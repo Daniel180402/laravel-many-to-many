@@ -16,6 +16,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$post->title}}</h5>
                     <p class="card-text">{{$post->content}}</p>
+                    <pre class="card-text"> {{$post->user_id}}</pre>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">{{$post->updated_at}}</small>
@@ -55,8 +56,8 @@
 @endsection
 
 
-{{-- @section('script-footer')
-    <script>
+@section('script-footer')
+    <script defer>
     const blackHole = document.querySelectorAll('.blackhole');
     blackHole.forEach(singleForm => {
         singleForm.addEventListener('submit', function (event) {
@@ -68,4 +69,4 @@
         })
     });
     </script>
-@endsection --}}
+@endsection

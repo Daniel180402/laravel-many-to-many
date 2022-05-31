@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    // one to one -> dispone di un elemento dello stesso tipo -> hasOne
+    public function userInfo(){
+        return $this->hasOne('App\UserInfo');
+    }
+
 }
