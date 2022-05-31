@@ -1,0 +1,25 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+header,
+footer {
+    height: 8.13vh;
+}
+main {
+    .my-height {
+        height: 80vh;
+    }
+    /* overflow: scroll; */
+}
+
+.show-height {
+    img {
+        height: 45vh;
+    }
+}
