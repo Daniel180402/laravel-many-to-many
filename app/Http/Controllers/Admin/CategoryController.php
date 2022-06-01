@@ -46,7 +46,7 @@ class CategoryController extends Controller
         $newCategory->save();
 
 
-        return redirect()->route('categories.show', $newCategory);
+        return redirect()->route('admin.categories.show', $newCategory);
     }
 
     /**
@@ -84,11 +84,9 @@ class CategoryController extends Controller
 
         $category->name = $data['name'];
         $category->color = $data['color'];
-
-        // # Salvo la nuova categoria
         $category->save();
 
-        return redirect()->route('categories.show', $category);
+        return redirect()->route('admin.categories.show', $category);
     }
 
 

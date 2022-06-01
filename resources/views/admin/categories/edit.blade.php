@@ -12,12 +12,12 @@
             <div class="row h-100 justify-content-center align-items-center">
                 <div class="col-12">
                     <label for="name" class="size-label">Name Category</label>
-                    <input type="text" class="m-3" name="name" value="{{$category->name}}">
+                    <input type="text" class="m-3" name="name" value="{{$category->name}}" id="name">
 
                 </div>
                 <div class="col-12">
                     <label for="color" class="form-label">Color picker</label>
-                    <input type="color" class="form-control form-control-color" id="color" value="{{$category->name}}">
+                    <input type="color" class="form-control form-control-color" id="color" name="color" value="{{$category->name}}">
 
                 </div>
                 <div class="col-4 text-center">
