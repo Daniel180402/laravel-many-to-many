@@ -9,32 +9,26 @@
                 {{ session('message') }}
             </div>
             @endif
-            <div class="col-6 show-height">
-                <div class="card h-100">
-                    <img src="{{$post->image_url}}" class="card-img-top" alt="{{$post->title}}">
-                <div class="card-body">
-                    <h5 class="card-title">{{$post->title}}</h5>
-                    <p class="card-text">{{$post->content}}</p>
-                    <pre class="card-text"> {{ $post->user_id }}</pre>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">{{$post->updated_at}}</small>
-                </div>
+            <div class="col-12 show-height text-center">
+                <div class="card h-100 ">
+                    <div class="card-body" style="background-color: {{$category->color}}">
+                        <h5 class="card-title">{{$category->name}}</h5>
+                    </div>
                 </div>
             </div>
             <div class="col-12">
                 <div class="row justify-content-around">
                     <div class="col-3">
-                        <a href="{{route('admin.posts.show', $post->id - 1)}}">
+                        <a href="{{route('admin.categories.show', $category->id - 1)}}">
                             <button class="btn btn-success">Previus</button>
                         </a>
                     </div>
                     <div class="col-3">
-                        <a href="{{route('admin.posts.edit', $post)}}">
+                        <a href="{{route('admin.categories.edit', $category)}}">
                             <button class="btn btn-warning">Edit</button>
                         </a>
                     </div>
-                    <form action="{{route('admin.posts.destroy', $post)}}" class="col-3 blackhole" method="POST" post-title="{{ucwords($post->title)}}">
+                    <form action="{{route('admin.categories.destroy', $category)}}" class="col-3 blackhole" method="POST" category-name="{{ucwords($category->name)}}">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">
@@ -42,7 +36,7 @@
                         </button>
                     </form>
                     <div class="col-3">
-                        <a href="{{route('admin.posts.show', $post->id + 1)}}">
+                        <a href="{{route('admin.categories.show', $category->id + 1)}}">
                             <button class="btn btn-success">Next</button>
                         </a>
                     </div>
@@ -68,7 +62,7 @@
     blackHole.forEach(singleForm => {
         singleForm.addEventListener('submit', function (event) {
             event.preventDefault(); //acchiappo l'invio del form
-            userConfirm = window.confirm(`Are You Sure To Delate ${this.getAttribute('post-title')}`);
+            userConfirm = window.confirm(`Are You Sure To Delate ${this.getAttribute('category-name')}`);
             if(userConfirm) {
                 this.submit();
             }

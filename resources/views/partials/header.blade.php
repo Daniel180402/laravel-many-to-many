@@ -47,7 +47,9 @@
                             </div>
                         </li>
                         <a class="btn btn-dark" href="{{route('admin.posts.create')}}">add post</a>
+                        <a class="btn btn-primary" href="{{route('admin.categories.create')}}">add category</a>
                         <a class="btn btn-warning" href="{{route('admin.posts.index')}}">back to Posts</a>
+                        <a class="btn btn-warning" href="{{route('admin.categories.index')}}">back to Categories</a>
 
                     @endguest
                 </ul>

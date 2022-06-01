@@ -31,6 +31,7 @@ Route::middleware('auth')
 ->group(function(){
     Route::get('/', 'HomeController@index')->name('home');
     Route::resource('posts', 'PostsController');
+    Route::resource('categories', 'CategoryController');
 });
 //sempre dopo mai prima, sovvrascrive
 Route::get('{any}', 'Guest\HomeController@index')->where('any', '.*');
